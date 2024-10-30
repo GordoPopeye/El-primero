@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #2b1657;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-size: 16px;
+}
+
+.header{
+    background-color: #3432cb;
+    display: flex;
+    z-index: 100;
+    margin-top: 10px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding: 5px 5% 5px 0px;
+}
+
+.header .logo{
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    float: left;
+    justify-content: left;
+    margin-right: 10%;
+    z-index: 10;
+}
+
+.header .logo img{
+    height: 90px;
+    width: 120px;
+    display: flex;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.header .logo img:hover{
+    transform: scaleX(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+    z-index: 10;
+    font-size: 30px;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.header .nav-links li:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.header .nav-links a{
+    font-size: 30px;
+    color:#ffffff;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.header .nav-links li a:hover{
+    color:rgb(165, 49, 49);
+}
+
+.btn button {
+    font-size: 16px;
+    padding: 8px 16px;
+    background-color: #e6800c;
+    color: #000123;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn button:hover {
+    background-color: #1435a1;
+    color: #ffffff;
+}
+
+.nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(17, 14, 223, 0.274);
+    min-width: 200px;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    transform: scale(1.0);
+    text-align: center;
+}
+
+.nav-links .dropdown-content li {
+    text-align: center;
+    padding: 10px;
+}
+
+.nav-links .dropdown-content li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+
+.nav-links .dropdown-content li a:hover {
+    background-color: rgb(16, 15, 97);
+    width: 236px;
+    margin-left: 2px;
+    color: rgb(163, 164, 214);
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #1f45c0;
+}
+
+.Comienzo{
+    padding: 50px 5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+ /*No tocar. Funciona gracias a dios.*/
+.Comienzo p {
+    font-size: 110px;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 70%; 
+    text-align: left;
+    margin: 0;
+}
+
+.background{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: -moz-hidden-unscrollable;
+}
+ /*Como se forman*/
+.burbuja{
+    position: absolute;
+    display: flex;
+    z-index: -1;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+ /*La forma en la que crecen*/
+.burbuja span{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: rgb(51, 131, 223);
+    top: 0;
+    left: 0;
+    margin: 0 3px;
+    z-index: -1;
+    border-radius: 50px; /*redondito o cubito*/
+    box-shadow: 0 0 0 10px #7fdfe63d,
+    0 0 50px rgb(51, 131, 223),
+    0 0 100px rgb(51, 131, 223);
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i))
+}
+ /*burbuja moraditas*/
+.burbuja span:nth-child(even){
+    background: rgb(102, 36, 189);
+    box-shadow: 0 0 0 10px #943ddb3d,
+    0 0 50px rgb(102, 36, 189),
+    0 0 100px rgb(102, 36, 189);
+    z-index: -100;
+}
+ /*Inicio de animacion*/ 
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(100vh) scale(0);
+    }
+    100%
+    {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+#DDV{
+    position: relative;
+    display: flex;
+    left: 4%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 50px;
+    z-index: 100;
+    margin-top: 10px;
+}
+
+.imagenes{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items:center;
+    padding: 0px 4% 10% 0;
+    background-color: #230e50;
+    min-height: 200%;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    
+}
+
+/*gracias a dios, nuestro padre esto funciona. NO TOCAR*/
+.imagen{
+    position: relative;
+    z-index: 100;
+    top: 100px;
+    left: 8%;
+    height: 600px;
+    width: calc(33.33% - 200px); /* Ajusta el ancho que desees menos el margen */
+    min-width: 22%;
+    margin: 0 50px; 
+    margin-bottom: 10px;
+    background-color: rgb(0, 1, 35);
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.imagen img{
+    width: 100%;
+    max-width: 150%;
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    object-fit:cover;
+}
+
+.imagen:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
+    cursor: pointer; 
+}
+
+.overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #000123;
+        background-color: rgba(0, 0, 0, 0.1); /* aca esta la transparencia que nos queria enseñar profe */
+    padding: 10px 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.overlay p{
+    color: white;
+    padding-bottom: 5px;
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.imagen .btn {
+    display: inline-block;
+}
+
+.footer {
+    background-color: #561dc9;
+    position: relative;
+    top: 30%;
+    color: #ffffff;
+    padding: 50px 5%;
+    font-size: 14px;
+    z-index: 5;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 5;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-column.social a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+.footer-column.social img {
+    width: 32px;
+    height: 32px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .imagenes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagen {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    #DDV {
+        font-size: 28px;
+    }
+}
+
+/* Estilo para pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .imagenes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagen {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    #DDV {
+        font-size: 28px;
+    }
+}
+
+/* Estilo para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+        height: auto;
+    }
+
+    .nav-links li {
+        padding: 10px 5px;
+        font-size: 20px;
+    }
+
+    .imagenes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagen {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #DDV {
+        font-size: 24px;
+    }
+
+    .Comienzo p {
+        font-size: 36px;
+        text-align: center;
+    }
+}
